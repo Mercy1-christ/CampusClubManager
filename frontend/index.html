@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campus Club Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="subtitle">CAMPUS COMMUNITY</p>
+
+            <h1>Campus Club Manager</h1>
+
+            <p>
+                Discover, manage and connect with campus clubs.
+            </p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome-card">
+            <div>
+                <h2>Club Management Dashboard</h2>
+
+                <p>
+                    Manage your campus clubs from one place.
+                </p>
+            </div>
+
+            <div class="total-box">
+                <span>Total Clubs</span>
+                <strong id="clubCount">0</strong>
+            </div>
+        </section>
+
+        <section class="form-card">
+
+            <h2 id="formTitle">Register a New Club</h2>
+
+            <p class="description">
+                Enter the club details in the form below.
+            </p>
+
+            <form id="clubForm">
+
+                <input type="hidden" id="clubId">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="name">Club Name *</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Enter club name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category</label>
+
+                        <input
+                            type="text"
+                            id="category"
+                            placeholder="e.g. Technology"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="president">Club President</label>
+
+                        <input
+                            type="text"
+                            id="president"
+                            placeholder="Enter president's name"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meeting_day">Meeting Day</label>
+
+                        <select id="meeting_day">
+                            <option value="">Select a day</option>
+                            <option>Monday</option>
+                            <option>Tuesday</option>
+                            <option>Wednesday</option>
+                            <option>Thursday</option>
+                            <option>Friday</option>
+                            <option>Saturday</option>
+                            <option>Sunday</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact_email">Contact Email</label>
+
+                        <input
+                            type="email"
+                            id="contact_email"
+                            placeholder="club@example.com"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+
+                        <input
+                            type="text"
+                            id="description"
+                            placeholder="Describe the club"
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-actions">
+
+                    <button type="submit" id="saveButton">
+                        + Register Club
+                    </button>
+
+                    <button
+                        type="button"
+                        id="cancelButton"
+                        class="cancel-button"
+                        hidden
+                    >
+                        Cancel Edit
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="formMessage" role="status"></p>
+
+        </section>
+
+        <section class="clubs-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Registered Clubs</h2>
+
+                    <p>View and manage your campus clubs.</p>
+                </div>
+
+                <button id="refreshButton" class="refresh-button">
+                    Refresh List
+                </button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Club Name</th>
+                            <th>Category</th>
+                            <th>President</th>
+                            <th>Meeting Day</th>
+                            <th>Contact Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="clubsTableBody">
+                        <tr>
+                            <td colspan="7">Loading clubs...</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Campus Club Manager | ICT 251 Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
